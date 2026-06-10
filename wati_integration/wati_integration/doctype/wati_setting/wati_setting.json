@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-05 19:59:28.670116",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "column_break_top",
+  "url",
+  "column_break_2",
+  "whatsapp_number",
+  "token",
+  "section_break_adv",
+  "bulk_send_delay",
+  "column_break_adv2",
+  "max_retries",
+  "retry_wait_seconds",
+  "bulk_batch_size",
+  "section_break_retention",
+  "log_retention_days",
+  "section_break_webhook",
+  "webhook_secret"
+ ],
+ "fields": [
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable WATI Sending",
+   "default": "1",
+   "description": "ADDON v2.0.2 — Global kill switch. Uncheck to pause ALL outgoing WhatsApp messages without disabling individual rules."
+  },
+  {
+   "fieldname": "column_break_top",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "WATI API URL",
+   "reqd": 1,
+   "description": "e.g. https://live-mt-server.wati.io/YOUR_TENANT_ID"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number",
+   "reqd": 1,
+   "description": "With country code, e.g. 971501234567"
+  },
+  {
+   "fieldname": "token",
+   "fieldtype": "Password",
+   "label": "API Token",
+   "reqd": 1,
+   "description": "Bearer token from WATI API Docs page — stored encrypted"
+  },
+  {
+   "fieldname": "section_break_adv",
+   "fieldtype": "Section Break",
+   "label": "Advanced Settings",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "bulk_send_delay",
+   "fieldtype": "Float",
+   "label": "Bulk Send Delay (seconds)",
+   "default": "0.5",
+   "description": "Pause between each message in a bulk send to avoid WATI rate limits"
+  },
+  {
+   "fieldname": "column_break_adv2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_retries",
+   "fieldtype": "Int",
+   "label": "Max Retries on 429",
+   "default": "3",
+   "description": "How many times to retry when WATI returns HTTP 429 (rate limited)"
+  },
+  {
+   "fieldname": "retry_wait_seconds",
+   "fieldtype": "Int",
+   "label": "Retry Wait (seconds)",
+   "default": "5",
+   "description": "Seconds to wait before each retry after a 429 response"
+  },
+  {
+   "fieldname": "bulk_batch_size",
+   "fieldtype": "Int",
+   "label": "Bulk Batch Size",
+   "default": "100",
+   "description": "Max recipients per background-job batch during bulk send. Set to 0 to disable batching. Default: 100. BUG FIX: field was missing from JSON schema — present only via SQL patch, so there was no UI control to configure it."
+  },
+  {
+   "fieldname": "section_break_retention",
+   "fieldtype": "Section Break",
+   "label": "Log Retention",
+   "collapsible": 1,
+   "description": "ADDON v2.0.2 — Automatic log cleanup"
+  },
+  {
+   "fieldname": "log_retention_days",
+   "fieldtype": "Int",
+   "label": "Log Retention (days)",
+   "default": "90",
+   "description": "ADDON v2.0.2 — Wati Message Log entries older than this many days are deleted nightly at 02:00. Set to 0 to disable cleanup."
+  },
+  {
+   "fieldname": "section_break_webhook",
+   "fieldtype": "Section Break",
+   "label": "Webhook Security",
+   "collapsible": 1,
+   "description": "FIX v2.0.3 — Protect the incoming webhook endpoint from unauthenticated flood requests."
+  },
+  {
+   "fieldname": "webhook_secret",
+   "fieldtype": "Data",
+   "label": "Webhook Secret",
+   "description": "Optional. When set, every incoming WATI webhook POST must carry a matching X-Wati-Secret header. Leave blank to disable verification (backward-compatible). Copy this value into WATI dashboard → Webhook → Custom Header: X-Wati-Secret. BUG FIX: changed from Password to Data — Password fields are Fernet-encrypted in Frappe v16 DB, making get_single_value() return ciphertext, breaking comparison."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Wati Integration",
+ "name": "Wati Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "WML.#####",
+ "creation": "2022-07-05 20:09:37.879509",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "mobile_no",
+  "column_break_2",
+  "document",
+  "column_break_4",
+  "ref_doctype",
+  "sent_at",
+  "direction",
+  "column_break_meta",
+  "message_template",
+  "wati_rule",
+  "request_data_section",
+  "column_break_7",
+  "url",
+  "headers",
+  "payload",
+  "response_data_section",
+  "status_code",
+  "column_break_13",
+  "response"
+ ],
+ "fields": [
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Read Only",
+   "label": "Mobile No",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Document"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ref_doctype",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Doctype"
+  },
+  {
+   "fieldname": "sent_at",
+   "fieldtype": "Datetime",
+   "label": "Sent At",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Timestamp set by send_whatsapp_message() at the moment the HTTP request is made."
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "label": "Direction",
+   "options": "\nOutgoing\nIncoming\nStatus Update",
+   "default": "Outgoing",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1,
+   "description": "ADDON v2.0.2 — Outgoing = sent by ERPNext, Incoming = reply received via webhook"
+  },
+  {
+   "fieldname": "column_break_meta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "message_template",
+   "fieldtype": "Data",
+   "label": "Message Template",
+   "read_only": 1,
+   "in_standard_filter": 1,
+   "description": "ADDON v2.0.2 — Template used for this message"
+  },
+  {
+   "fieldname": "wati_rule",
+   "fieldtype": "Data",
+   "label": "Wati Rule",
+   "read_only": 1,
+   "in_standard_filter": 1,
+   "description": "ADDON v2.0.2 — Rule name that triggered this message"
+  },
+  {
+   "fieldname": "request_data_section",
+   "fieldtype": "Section Break",
+   "label": "Request Data"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Small Text",
+   "label": "URL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "headers",
+   "fieldtype": "Small Text",
+   "label": "Headers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload",
+   "fieldtype": "Code",
+   "label": "Payload",
+   "read_only": 1
+  },
+  {
+   "fieldname": "response_data_section",
+   "fieldtype": "Section Break",
+   "label": "Response Data"
+  },
+  {
+   "fieldname": "status_code",
+   "fieldtype": "Data",
+   "label": "Status Code",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Code",
+   "label": "Response",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-05 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Wati Integration",
+ "name": "Wati Message Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "sent_at",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

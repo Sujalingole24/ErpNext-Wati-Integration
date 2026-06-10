@@ -1,0 +1,4 @@
+# requests: HTTP client used to call the WATI API
+# Lower bound 2.28.0: minimum for reliable timeout= behavior + CVE-2023-32681 fix
+# Upper bound <3.0.0: requests 3.x is a planned breaking release
+requests>=2.28.0,<3.0.0

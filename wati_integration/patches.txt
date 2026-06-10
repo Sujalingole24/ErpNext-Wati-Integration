@@ -1,0 +1,13 @@
+# v2.0.1: wati_message_log.json adds 'sent_at' Datetime field (replaces broken fetch_from=creation).
+# Run: bench --site YOUR_SITE migrate
+
+# v2.0.2: Addon columns — direction/message_template/wati_rule on Message Log,
+#         enabled/log_retention_days on Wati Setting, description on Message Rule,
+#         contact/custom_mobile_no on Send Wati Message, member_name on Wati Group Details.
+wati_integration.patches.v2_0_2_addon_columns
+
+# v2.0.3: Security & stability fixes — webhook_secret + bulk_batch_size on Wati Setting.
+#         FIX #1: webhook flood guard (webhook_secret field).
+#         FIX #2: bulk send batch enqueue (bulk_batch_size field).
+#         FIX #3: ORM-based log purge (no schema change).
+wati_integration.patches.v2_0_3_security_fixes

@@ -1,0 +1,24 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2026-06-05 00:00:00.000000",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "index_web_pages_for_search": 1,
+ "is_standard": "Yes",
+ "modified": "2026-06-05 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Wati Integration",
+ "name": "Wati Delivery Report",
+ "owner": "Administrator",
+ "ref_doctype": "Wati Message Log",
+ "report_name": "Wati Delivery Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

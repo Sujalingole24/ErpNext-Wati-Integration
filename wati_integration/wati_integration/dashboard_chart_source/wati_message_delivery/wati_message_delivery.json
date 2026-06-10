@@ -1,0 +1,14 @@
+{
+ "creation": "2026-06-06 00:00:00.000000",
+ "doctype": "Dashboard Chart Source",
+ "enabled": 1,
+ "modified": "2026-06-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Wati Integration",
+ "name": "Wati Message Delivery",
+ "owner": "Administrator",
+ "source_name": "Wati Message Delivery",
+ "timeseries": 1,
+ "unit": "Messages",
+ "script": "# Wati Message Delivery — Dashboard Chart Source\n# Returns daily success / failure counts for the last 30 days.\n# Called by the 'Wati Message Delivery' Dashboard Chart on the\n# Wati Integration workspace.\n\nfrom frappe.utils import add_days, nowdate\nimport frappe\n\nfrom_date = add_days(nowdate(), -30)\n\nrows = frappe.db.sql(\n    \"\"\"\n    SELECT\n        DATE(sent_at)                                              AS name,\n        SUM(CASE WHEN status_code = '200' THEN 1 ELSE 0 END)     AS success,\n        SUM(CASE WHEN status_code != '200' THEN 1 ELSE 0 END)    AS failed\n    FROM `tabWati Message Log`\n    WHERE sent_at IS NOT NULL\n      AND DATE(sent_at) >= %(from_date)s\n    GROUP BY DATE(sent_at)\n    ORDER BY DATE(sent_at) ASC\n    \"\"\",\n    {\"from_date\": from_date},\n    as_dict=1,\n)\n\nlabels    = [str(r[\"name\"])    for r in rows]\nsuccess   = [r[\"success\"]      for r in rows]\nfailed    = [r[\"failed\"]       for r in rows]\n\nchart = {\n    \"labels\": labels,\n    \"datasets\": [\n        {\"name\": \"Sent (200)\",  \"values\": success, \"chartType\": \"bar\"},\n        {\"name\": \"Failed\",      \"values\": failed,  \"chartType\": \"bar\"},\n    ],\n    \"type\": \"bar\",\n    \"colors\": [\"#28a745\", \"#dc3545\"],\n    \"barOptions\": {\"stacked\": 0},\n}\n"
+}

@@ -1,0 +1,7 @@
+[build-system]
+# BUG FIX #4 — The original used "setuptools.backends.legacy:build" which is
+# deprecated in setuptools>=67 and raises deprecation warnings on Python 3.12
+# (the runtime shipped with Ubuntu 24.04 / ERPNext v16 environments).
+# The correct modern key is "setuptools.build_meta".
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"

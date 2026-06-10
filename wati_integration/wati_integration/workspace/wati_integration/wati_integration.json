@@ -1,0 +1,162 @@
+{
+ "category": "Modules",
+ "charts": [
+  {
+   "chart_name": "Wati Message Delivery",
+   "label": "Wati Message Delivery"
+  }
+ ],
+ "creation": "2022-07-06 02:44:07.292806",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "icon-whatsapp",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Wati Integration",
+ "module": "Wati Integration",
+ "name": "Wati Integration",
+ "owner": "Administrator",
+ "modified": "2026-06-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "number_cards": [
+  {
+   "label": "Sent Today",
+   "number_card_name": "Wati Messages Sent Today"
+  },
+  {
+   "label": "Failed Today",
+   "number_card_name": "Wati Messages Failed Today"
+  },
+  {
+   "label": "Total (Last 30 Days)",
+   "number_card_name": "Wati Total Last 30 Days"
+  }
+ ],
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "public": 1,
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "format": "{} Active",
+   "label": "Wati Message Rule",
+   "link_to": "Wati Message Rule",
+   "stats_filter": "{\"enable\": 1}",
+   "type": "DocType"
+  },
+  {
+   "label": "Wati Setting",
+   "link_to": "Wati Setting",
+   "type": "DocType"
+  },
+  {
+   "label": "Wati Delivery Report",
+   "link_to": "Wati Delivery Report",
+   "type": "Report"
+  }
+ ],
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Wati Setting",
+   "link_to": "Wati Setting",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Message Template",
+   "link_to": "Message Template",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Wati Message Rule",
+   "link_to": "Wati Message Rule",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Wati Group",
+   "link_to": "Wati Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Messaging",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Send Message",
+   "link_to": "Send Wati Message",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Wati Message Log",
+   "link_to": "Wati Message Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Reports",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Wati Delivery Report",
+   "link_to": "Wati Delivery Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "content": "[{\"type\": \"number_cards\", \"data\": {\"number_cards\": [\"Wati Messages Sent Today\", \"Wati Messages Failed Today\", \"Wati Total Last 30 Days\"]}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Wati Message Delivery\", \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 3}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Masters\", \"col\": 5}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Messaging\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Reports\", \"col\": 4}}]"
+}
